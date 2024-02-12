@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_registrar">17dp</dimen>
+    <dimen name="universal_paddding2">10dp</dimen>
+</resources>

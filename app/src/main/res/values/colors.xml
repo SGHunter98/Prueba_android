@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#025905</color>
+    <color name="green_light">#17E41E</color>
+    <color name="red">#F60202</color>
+    <color name="purpura">#1100FF</color>
+    <color name="primary_dark">#0031ca</color>
+    <color name="color_Accent">#2962ff</color>
+    <color name="logo">#283593</color>
+    <color name="btn_limpiar">#b0ff57</color>
+    <color name="btn_save">#30E218</color>
+    <color name="btn_delete">#E21818</color>
+</resources>

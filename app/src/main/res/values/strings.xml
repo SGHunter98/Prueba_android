@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CLN Currency</string>
+    <string name="divisa">Divisa</string>
+    <string name="lista_de_divisas">Lista de Divisas</string>
+    <string name="calculadora">Calculadora</string>
+    <string name="pa_s">País</string>
+    <string name="registro_de_monedas">Registro de Monedas</string>
+    <string name="coin_name">Nombre de la Moneda</string>
+    <string name="symbol_coin">Simbolo de la moneda</string>
+    <string name="save_coin">Guardar Moneda</string>
+    <string name="nexto_to">Ver Todas las Monedas</string>
+    <string name="lista_de_monedas_resgistradas">Lista de Monedas Resgistradas</string>
+    <string name="country">País </string>
+    <string name="name_coin">Nombre Moneda: </string>
+    <string name="coin_symbol">Simbolo: </string>
+    <string name="agregar_tasa_de_cambio">Agregar Tasa de Cambio</string>
+    <string name="moneda_seleccionada">Moneda Seleccionada</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Borrar</string>
+</resources>
