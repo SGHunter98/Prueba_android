@@ -113,22 +113,94 @@
                         android:id="@+id/tvCoin_exchange_currency"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Agregar Tazas de Cambio"
+                        android:text="@string/agregar_tazas_de_cambio"
                         android:textSize="18sp"
                         android:padding="10dp"
                         android:textColor="@color/logo"/>
 
 
                 </LinearLayout>
-                <TextView
-                    android:id="@+id/tvExchangeRate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tasa de Cambio: 0.0"
-                    android:textSize="16sp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvExchangeRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tasa de Cambio"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:stretchColumns="*">
+                <TableRow
+                    android:id="@+id/t_row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@color/logo">
+                    <TextView
+                        android:id="@+id/tvid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/id"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/tvCoin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:text="@string/moneda"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvExchange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:text="@string/cambio"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </TableRow>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btn_load"
+                        android:visibility="gone"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="left"
+                        android:textAlignment="center"
+                        android:textColor="#3A4693"
+                        android:textSize="13sp"
+                        android:typeface="normal"
+                        app:strokeColor="#52BEFF"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+            </TableLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

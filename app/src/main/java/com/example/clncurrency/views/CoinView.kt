@@ -12,26 +12,45 @@ import io.realm.Realm
 class CoinView : AppCompatActivity() {
     private lateinit var realm: Realm
     private lateinit var coinAdapter: CoinAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coin_view)
 
+        realm = Realm.getDefaultInstance()
+
         val recyclerView = findViewById<RecyclerView>(R.id.rv_coin_list)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        val coins = getAllCoins()
-        val realm = Realm.getDefaultInstance()
 
-        val coinAdapter = CoinAdapter(this, realm, coins)
+        val coins = getAllCoins()
+
+        coinAdapter = CoinAdapter(this, realm, coins)
         recyclerView.adapter = coinAdapter
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        // Actualizar el RecyclerView al volver a la actividad
+        updateRecyclerView()
+    }
+
+    // Método para actualizar el RecyclerView
+    private fun updateRecyclerView() {
+        val coins = getAllCoins()
+        coinAdapter.updateData(coins)
+    }
+
     private fun getAllCoins(): List<Coin> {
-        val realm = Realm.getDefaultInstance()
         val coins = realm.where(Coin::class.java).findAll()
         val coinList = realm.copyFromRealm(coins)
-        realm.close()
-
         return coinList
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
+    }
 }
+

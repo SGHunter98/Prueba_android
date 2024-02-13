@@ -17,4 +17,8 @@
     <string name="moneda_seleccionada">Moneda Seleccionada</string>
     <string name="editar">Editar</string>
     <string name="borrar">Borrar</string>
+    <string name="cambio">Cambio</string>
+    <string name="moneda">Moneda</string>
+    <string name="id">ID</string>
+    <string name="agregar_tazas_de_cambio">Agregar Tazas de Cambio</string>
 </resources>

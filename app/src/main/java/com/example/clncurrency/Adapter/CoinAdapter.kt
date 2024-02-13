@@ -19,7 +19,7 @@ interface OnCoinDeleteListener {
     fun onCoinDeleted()
 }
 
-class CoinAdapter (val activity: Activity, private val realm: Realm, private val coins: List<Coin>,private val onCoinDeleteListener: OnCoinDeleteListener? = null) : RecyclerView.Adapter<CoinAdapter.ViewHolder>() {
+class CoinAdapter (val activity: Activity, private val realm: Realm, private var coins: List<Coin>, private val onCoinDeleteListener: OnCoinDeleteListener? = null) : RecyclerView.Adapter<CoinAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_coin, parent, false)
@@ -55,10 +55,11 @@ class CoinAdapter (val activity: Activity, private val realm: Realm, private val
                 intent.putExtra("pais", coin.country)
                 intent.putExtra("nombreMoneda", coin.coinName)
                 intent.putExtra("simbolo", coin.coinSymbol)
+                intent.putExtra("coinId", coin.id)
 
                 // Iniciar la otra actividad
                 activity.startActivity(intent)
-                val toastMessage = "País: ${coin.country}, Nombre: ${coin.coinName}, Símbolo: ${coin.coinSymbol}"
+                val toastMessage = "ID: ${coin.id} ,País: ${coin.country}, Nombre: ${coin.coinName}, Símbolo: ${coin.coinSymbol}"
                 showToast(toastMessage)
             }
             delete_coin.setOnClickListener {
@@ -91,5 +92,11 @@ class CoinAdapter (val activity: Activity, private val realm: Realm, private val
     private fun showToast(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
+    // Método para actualizar los datos y notificar al adaptador
+    fun updateData(newCoins: List<Coin>) {
+        coins = newCoins
+        notifyDataSetChanged()
+    }
+
 
 }
